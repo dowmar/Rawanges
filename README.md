@@ -5,7 +5,7 @@ Rawanges adalah MVP fullstack safety map untuk Jakarta: peta redzone, deteksi lo
 ## Stack
 
 - Next.js App Router + TypeScript
-- Leaflet + OpenStreetMap untuk peta
+- Leaflet + Mapbox tiles untuk peta (fallback ke OpenStreetMap kalau token belum diset)
 - API Routes Next.js sebagai backend
 - File JSON local sebagai storage MVP (`data/db.json`)
 
@@ -20,6 +20,13 @@ Rawanges adalah MVP fullstack safety map untuk Jakarta: peta redzone, deteksi lo
 - API fullstack: `/api/redzones`, `/api/reports`, `/api/panic`, `/api/safe-points`, `/api/risk-check`
 
 ## Jalankan lokal
+
+Copy env example lalu isi token Mapbox:
+
+```bash
+cp .env.example .env.local
+# edit NEXT_PUBLIC_MAPBOX_TOKEN di .env.local
+```
 
 ```bash
 npm install

@@ -23,6 +23,9 @@ function icon(color: string) {
   });
 }
 
+const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+const mapboxStyle = process.env.NEXT_PUBLIC_MAPBOX_STYLE ?? "mapbox/streets-v12";
+
 export function SafetyMap({
   redzones,
   reports,
@@ -35,10 +38,16 @@ export function SafetyMap({
   userLocation: LatLng | null;
 }) {
   const center = userLocation ?? jakartaCenter();
+  const tileUrl = mapboxToken
+    ? `https://api.mapbox.com/styles/v1/${mapboxStyle}/tiles/256/{z}/{x}/{y}@2x?access_token=${mapboxToken}`
+    : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+  const attribution = mapboxToken
+    ? '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 
   return (
     <MapContainer className="map" center={[center.lat, center.lng]} zoom={12} scrollWheelZoom>
-      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer attribution={attribution} url={tileUrl} />
       <MapRecenter userLocation={userLocation} />
 
       {userLocation && (
