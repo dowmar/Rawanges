@@ -1,0 +1,56 @@
+{
+  "redzones": [
+    {
+      "id": "rz-senen",
+      "name": "Senen - Underpass & Sekitar Stasiun",
+      "lat": -6.1767,
+      "lng": 106.8404,
+      "radiusMeters": 650,
+      "riskScore": 74,
+      "description": "Zona kewaspadaan demo berdasarkan skenario laporan komunitas.",
+      "activeFrom": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "rz-cakung",
+      "name": "Cakung - Jalur Industri Malam",
+      "lat": -6.1837,
+      "lng": 106.9472,
+      "radiusMeters": 900,
+      "riskScore": 82,
+      "description": "Area demo dengan risiko tinggi saat malam dan jalan sepi.",
+      "activeFrom": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "rz-kalideres",
+      "name": "Kalideres - Akses Terminal",
+      "lat": -6.1549,
+      "lng": 106.7052,
+      "radiusMeters": 750,
+      "riskScore": 66,
+      "description": "Area rawan demo untuk validasi fitur redzone alert.",
+      "activeFrom": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep-demo-1",
+      "incidentType": "Orang mencurigakan",
+      "severity": "medium",
+      "description": "Demo laporan: aktivitas mencurigakan dekat jalan sepi.",
+      "lat": -6.1779,
+      "lng": 106.842,
+      "happenedAt": "2026-01-01T00:00:00.000Z",
+      "status": "verified",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "anonymous": true
+    }
+  ],
+  "panicEvents": [],
+  "safePoints": [
+    { "id": "sp-polsek-senen", "name": "Polsek Senen", "type": "police", "lat": -6.1763, "lng": 106.8447, "address": "Senen, Jakarta Pusat", "open24h": true },
+    { "id": "sp-rscm", "name": "RSCM", "type": "hospital", "lat": -6.1971, "lng": 106.8473, "address": "Jl. Diponegoro, Jakarta Pusat", "open24h": true },
+    { "id": "sp-gambir", "name": "Stasiun Gambir", "type": "transport", "lat": -6.1767, "lng": 106.8307, "address": "Gambir, Jakarta Pusat", "open24h": false },
+    { "id": "sp-spbu-cikini", "name": "SPBU Cikini", "type": "gas_station", "lat": -6.1925, "lng": 106.8395, "address": "Cikini, Jakarta Pusat", "open24h": true },
+    { "id": "sp-minimarket-senen", "name": "Minimarket 24 Jam Senen", "type": "minimarket", "lat": -6.1749, "lng": 106.8391, "address": "Senen, Jakarta Pusat", "open24h": true }
+  ]
+}
